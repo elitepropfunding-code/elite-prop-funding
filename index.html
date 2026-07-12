@@ -29,7 +29,6 @@
     .details { font-size: 13px; color: #9ca3af; margin: 15px 0; line-height: 1.8; border-top: 1px solid var(--border); padding-top: 15px; }
     .select-btn { width: 100%; background: var(--btn); color: #fff; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
 
-    /* Premium Modal */
     .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index: 200; padding: 20px; overflow-y: auto; }
     .modal-content { background: var(--card-bg); max-width: 500px; margin: 50px auto; padding: 30px; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
     .payment-option { background: var(--bg); border: 1px solid var(--border); padding: 15px; border-radius: 10px; margin-bottom: 10px; }
@@ -83,9 +82,22 @@
 
   <script>
     const data = {
-      '1step': [['$5k', '$15', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], ['$10k', '$29', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], ['$25k', '$59', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%']],
-      '2step': [['$5k', '$11', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], ['$10k', '$20', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], ['$25k', '$35', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%']],
-      'instant': [['$1k', '$49', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'], ['$2.5k', '$99', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'], ['$5k', '$199', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%']]
+      '1step': [
+        ['$5k', '$15', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], ['$10k', '$29', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], 
+        ['$25k', '$59', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], ['$50k', '$112', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'],
+        ['$100k', '$199', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], ['$200k', '$359', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%']
+      ],
+      '2step': [
+        ['$5k', '$11', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], ['$10k', '$20', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], 
+        ['$25k', '$35', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], ['$50k', '$65', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'],
+        ['$100k', '$110', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], ['$200k', '$210', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'],
+        ['$500k', '$499', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%']
+      ],
+      'instant': [
+        ['$1k', '$49', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'], ['$2.5k', '$99', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'], 
+        ['$5k', '$199', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'], ['$10k', '$349', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'],
+        ['$25k', '$699', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%']
+      ]
     };
 
     function loadAccounts(type) {
