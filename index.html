@@ -8,19 +8,31 @@
     :root { --bg: #0b0e14; --card-bg: #111827; --border: #1f2937; --accent: #fbbf24; --btn: #60a5fa; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg); color: #ffffff; margin: 0; padding: 0; }
     
+    /* Header */
     header { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); background: var(--bg); }
-    .logo { font-weight: bold; font-size: 22px; color: var(--accent); }
-    .nav-btn { background: var(--btn); color: #fff; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; font-size: 14px; }
+    .logo { font-weight: bold; font-size: 22px; color: var(--accent); white-space: nowrap; }
+    .nav-btn { background: var(--btn); color: #fff; padding: 8px 16px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; font-size: 14px; border: none; }
 
+    /* Tabs */
     .tab-container { display: flex; justify-content: center; gap: 10px; margin: 30px 0; }
     .tab-btn { background: var(--card-bg); border: 1px solid var(--border); color: #fff; padding: 10px 20px; border-radius: 8px; cursor: pointer; transition: 0.3s; }
     .tab-btn.active { border-color: var(--accent); background: #1f2937; color: var(--accent); }
 
+    /* Trust & Reviews */
     .trust-section { text-align: center; margin: 40px 0; }
     .trust-badge { display: inline-block; padding: 10px 20px; border: 1px solid var(--accent); color: var(--accent); border-radius: 50px; font-weight: bold; margin-bottom: 20px; }
     .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px; margin-bottom: 50px; }
     .review-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border); }
 
+    /* Highlight Section */
+    .highlight-banner { border: 2px solid var(--accent); background: #111827; padding: 30px; text-align: center; margin: 40px 20px; border-radius: 16px; box-shadow: 0 0 15px rgba(251, 191, 36, 0.2); }
+    .highlight-text { font-size: 32px; font-weight: bold; color: var(--accent); margin: 0; }
+
+    /* Payout Banner */
+    .payout-banner { background: linear-gradient(90deg, #1f2937, #111827); border-top: 2px solid var(--accent); padding: 40px 20px; text-align: center; margin-top: 50px; }
+    .payout-banner h2 { color: var(--accent); margin-bottom: 10px; }
+
+    /* Account Grid */
     .grid-container { padding: 0 20px 40px; }
     .account-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
     .account-card { background: var(--card-bg); border: 1px solid var(--border); padding: 25px; border-radius: 16px; text-align: left; transition: transform 0.2s; }
@@ -29,6 +41,7 @@
     .details { font-size: 13px; color: #9ca3af; margin: 15px 0; line-height: 1.8; border-top: 1px solid var(--border); padding-top: 15px; }
     .select-btn { width: 100%; background: var(--btn); color: #fff; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
 
+    /* Modal */
     .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index: 200; padding: 20px; overflow-y: auto; }
     .modal-content { background: var(--card-bg); max-width: 500px; margin: 50px auto; padding: 30px; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
     .payment-option { background: var(--bg); border: 1px solid var(--border); padding: 15px; border-radius: 10px; margin-bottom: 10px; }
@@ -40,7 +53,7 @@
 <body>
 
   <header>
-    <div class="logo">Elite Prop</div>
+    <div class="logo">Elite Prop Funding</div>
     <a href="mailto:elitepropfunding@gmail.com" class="nav-btn">Contact Us</a>
   </header>
 
@@ -55,12 +68,21 @@
   </div>
 
   <div class="trust-section">
-    <div class="trust-badge">★ Trustworthy Prop Firm</div>
+    <div class="trust-badge">★ Elite Prop Funding | Trustworthy Firm</div>
     <div class="reviews-grid">
       <div class="review-card">"Elite Prop made my journey simple. The payout was instant!"<br><b>— Tony Mark King</b></div>
       <div class="review-card">"Best platform I have tested so far. Very disciplined rules."<br><b>— Jean King</b></div>
       <div class="review-card">"Finally, a prop firm that listens to traders. Highly recommend."<br><b>— Alan Dawson</b></div>
     </div>
+  </div>
+
+  <div class="highlight-banner">
+    <p class="highlight-text">We paid over $20,000,000 USD to our traders!</p>
+  </div>
+
+  <div class="payout-banner">
+    <h2>⚡ Payouts Within 24 Hours</h2>
+    <p>We believe in fast rewards. Once approved, your profit share is processed in less than 24 hours.</p>
   </div>
 
   <div id="modal" class="modal">
@@ -83,20 +105,20 @@
   <script>
     const data = {
       '1step': [
-        ['$5k', '$15', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], ['$10k', '$29', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], 
-        ['$25k', '$59', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], ['$50k', '$112', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'],
-        ['$100k', '$199', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%'], ['$200k', '$359', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%']
+        ['$5k', '$15', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'], ['$10k', '$29', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'], 
+        ['$25k', '$59', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'], ['$50k', '$112', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'],
+        ['$100k', '$199', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'], ['$200k', '$359', 'Target: 10%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%']
       ],
       '2step': [
-        ['$5k', '$11', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], ['$10k', '$20', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], 
-        ['$25k', '$35', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], ['$50k', '$65', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'],
-        ['$100k', '$110', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'], ['$200k', '$210', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%'],
-        ['$500k', '$499', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%']
+        ['$5k', '$11', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'], ['$10k', '$20', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'], 
+        ['$25k', '$35', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'], ['$50k', '$65', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'],
+        ['$100k', '$110', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'], ['$200k', '$210', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%'],
+        ['$500k', '$499', 'Target: 8%/5%', 'Daily DD: 5%', 'Max DD: 10%', 'Profit Split: 80-90%']
       ],
       'instant': [
-        ['$1k', '$49', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'], ['$2.5k', '$99', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'], 
-        ['$5k', '$199', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'], ['$10k', '$349', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%'],
-        ['$25k', '$699', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%']
+        ['$1k', '$49', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%', 'Profit Split: 80-90%'], ['$2.5k', '$99', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%', 'Profit Split: 80-90%'], 
+        ['$5k', '$199', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%', 'Profit Split: 80-90%'], ['$10k', '$349', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%', 'Profit Split: 80-90%'],
+        ['$25k', '$699', 'Target: No Target', 'Daily DD: 5%', 'Max DD: 5%', 'Profit Split: 80-90%']
       ]
     };
 
@@ -108,7 +130,7 @@
         <div class="account-card">
           <div style="font-size: 20px; font-weight: bold;">${i[0]} Account</div>
           <div class="account-price-tag">${i[1]}</div>
-          <div class="details">${i[2]}<br>${i[3]}<br>${i[4]}</div>
+          <div class="details">${i[2]}<br>${i[3]}<br>${i[4]}<br>${i[5]}</div>
           <button class="select-btn" onclick="document.getElementById('modal').style.display='block'">Buy Now</button>
         </div>
       `).join('');
